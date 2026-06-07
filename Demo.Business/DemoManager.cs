@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.Business
 {
-    public class DemoManager : IDemoManager
+    public class DemoManager: IDemoManager
     {
     }
 }

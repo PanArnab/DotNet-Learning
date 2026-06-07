@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore; 
 using Demo.Business;
 using Demo.Repository;
+using Demo.Repository.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // EF Core DbContext
-builder.Services.AddDbContext<AppDbContext>(options =>
+builder.Services.AddDbContext<DemoDbContext>(options =>
     options.UseSqlServer(connectionString, sqlOptions =>
     {
         sqlOptions.EnableRetryOnFailure(
@@ -23,7 +24,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }));
 
 // Helpers
-builder.Services.AddScoped<SqlHelper>();
+//builder.Services.AddScoped<SqlHelper>();
 
 // Register your business and repository services here
 builder.Services.AddScoped<IDemoManager, DemoManager>();

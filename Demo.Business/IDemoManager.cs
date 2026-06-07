@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.Business
 {
-    internal interface IDemoManager
+    public interface IDemoManager
     {
     }
 }
